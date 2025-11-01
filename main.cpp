@@ -107,21 +107,21 @@ int main(int argc, char *argv[]) {
   
   Draw::shadowfont = XLoadQueryFont(display, "6x13bold");
   if (!Draw::shadowfont) {
-    printf(stderr, "Warning: XLoadQueryFont(\"6x13bold\") failed, falling back to \"fixed\"\n");
+    printf("Warning: XLoadQueryFont(\"6x13bold\") failed, falling back to \"fixed\"\n");
     Draw::shadowfont = XLoadQueryFont(display, "fixed");
   }
   if (!Draw::shadowfont) {
-    printf(stderr, "Error: could not load any font for overlay text\n");
+    printf("Error: could not load any font for overlay text\n");
     return 1;
   }
   
   Draw::font = XLoadQueryFont(display, "6x13");
   if (!Draw::font) {
-    printf(stderr, "Warning: XLoadQueryFont(\"6x13\") failed, falling back to \"fixed\"\n");
+    printf("Warning: XLoadQueryFont(\"6x13\") failed, falling back to \"fixed\"\n");
     Draw::font = XLoadQueryFont(display, "fixed");
   }
   if (!Draw::font) {
-    printf(stderr, "Error: could not load any font for overlay text\n");
+    printf("Error: could not load any font for overlay text\n");
     return 1;
   }
   /* X11 initiation end */
