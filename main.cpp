@@ -105,22 +105,23 @@ int main(int argc, char *argv[]) {
   Draw::yellow = Xutil::xcolor_from_rgb(255, 255, 0, draw_display);
   Draw::orange = Xutil::xcolor_from_rgb(255, 170, 0, draw_display); 
   
+  Draw::shadowfont = XLoadQueryFont(display, "6x13bold");
   if (!Draw::shadowfont) {
-    fprintf(stderr, "Warning: XLoadQueryFont(\"6x13bold\") failed, falling back to \"fixed\"\n");
+    printf(stderr, "Warning: XLoadQueryFont(\"6x13bold\") failed, falling back to \"fixed\"\n");
     Draw::shadowfont = XLoadQueryFont(display, "fixed");
   }
   if (!Draw::shadowfont) {
-    fprintf(stderr, "Eror: could not load any font for overlay text\n");
+    printf(stderr, "Error: could not load any font for overlay text\n");
     return 1;
   }
-
+  
   Draw::font = XLoadQueryFont(display, "6x13");
   if (!Draw::font) {
-    fprintf(stderr, "Warning: XLoadQueryFont(\"6x13\") failed, falling back to \"fixed\"\n");
+    printf(stderr, "Warning: XLoadQueryFont(\"6x13\") failed, falling back to \"fixed\"\n");
     Draw::font = XLoadQueryFont(display, "fixed");
   }
   if (!Draw::font) {
-    fprintf(stderr, "Error: could not load any font for overlay text\n");
+    printf(stderr, "Error: could not load any font for overlay text\n");
     return 1;
   }
   /* X11 initiation end */
